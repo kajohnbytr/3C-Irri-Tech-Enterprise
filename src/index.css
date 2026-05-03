@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff385c;
+  --color-primary-active: #e00b41;
+  --color-primary-disabled: #ffd1da;
+  --color-primary-error-text: #c13515;
+  --color-primary-error-text-hover: #b32505;
+  --color-luxe: #460479;
+  --color-plus: #92174d;
+  --color-ink: #222222;
+  --color-body: #3f3f3f;
+  --color-muted: #6a6a6a;
+  --color-muted-soft: #929292;
+  --color-hairline: #dddddd;
+  --color-hairline-soft: #ebebeb;
+  --color-border-strong: #c1c1c1;
+  --color-canvas: #ffffff;
+  --color-surface-soft: #f7f7f7;
+  --color-surface-card: #ffffff;
+  --color-surface-strong: #f2f2f2;
+  --color-on-primary: #ffffff;
+  --color-on-dark: #ffffff;
+  --color-legal-link: #428bff;
+  --color-star-rating: #222222;
+  --color-scrim: #000000;
+
+  /* Legacy aliases used by existing JSX classes. */
+  --color-green-dark: #222222;
+  --color-green-primary: #ff385c;
+  --color-green-mid: #e00b41;
+  --color-green-accent: #ff385c;
+  --color-green-light: #ffd1da;
+  --color-green-pale: #f7f7f7;
+  --color-brown-earth: #6a6a6a;
+  --color-text-dark: #222222;
+  --color-text-body: #3f3f3f;
+  --color-text-muted: #6a6a6a;
+  --color-white: #ffffff;
+  --color-gray-light: #f7f7f7;
+  --color-gray-border: #dddddd;
+
+  --font-sans: "Airbnb Cereal VF", Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
+
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --shadow-airbnb: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0;
+  --shadow-sleek: var(--shadow-airbnb);
+  --shadow-sleek-lg: var(--shadow-airbnb);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-body font-sans antialiased bg-canvas selection:bg-primary-disabled selection:text-ink;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-ink tracking-tight;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-6 max-w-[1280px];
+  }
+  .section-padding {
+    @apply py-16 md:py-16;
+  }
+  .btn-primary {
+    @apply px-6 py-3.5 bg-primary text-on-primary font-medium rounded-[8px] hover:bg-primary-active transition-colors duration-200 inline-flex items-center justify-center gap-2 text-base min-h-12;
+  }
+  .btn-outline {
+    @apply px-6 py-3.5 border border-ink text-ink font-medium rounded-[8px] hover:bg-surface-soft transition-colors duration-200 inline-flex items-center justify-center gap-2 text-base min-h-12;
+  }
+  .btn-white-outline {
+    @apply px-6 py-3.5 border border-hairline text-ink font-medium rounded-[8px] hover:bg-surface-soft transition-colors duration-200 inline-flex items-center justify-center gap-2 text-base min-h-12;
+  }
+  .card-base {
+    @apply bg-surface-card border border-hairline rounded-[14px] p-6 shadow-none hover:shadow-sleek transition-shadow duration-200;
+  }
+  .eyebrow {
+    @apply inline-block py-0.5 px-2 bg-canvas text-ink text-[8px] font-bold tracking-[0.32px] uppercase rounded-full mb-6 border border-hairline;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
