@@ -87,23 +87,39 @@ export default function App() {
   ];
 
   return (
+<<<<<<< HEAD
     <div className="relative">
       {/* Scroll Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-green-accent origin-left z-50"
+=======
+    <div className="relative bg-canvas text-body">
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50"
+>>>>>>> 9a9fd57 (new ui colors)
         style={{ scaleX }}
       />
 
       {/* ===== SECTION 2: STICKY NAVIGATION ===== */}
       <nav 
         className={`fixed top-0 w-full z-40 transition-all duration-300 ${
+<<<<<<< HEAD
           isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-border py-4' : 'bg-transparent py-6'
+=======
+          isScrolled ? 'bg-canvas/95 backdrop-blur-md shadow-sm border-b border-hairline py-4' : 'bg-canvas border-b border-hairline py-5'
+>>>>>>> 9a9fd57 (new ui colors)
         }`}
       >
         <div className="container flex justify-between items-center">
           <a href="#home" className="flex items-center gap-2">
+<<<<<<< HEAD
             <Droplets className={`w-8 h-8 ${isScrolled ? 'text-green-primary' : 'text-white'}`} />
             <span className={`text-xl font-bold ${isScrolled ? 'text-green-dark' : 'text-white'}`}>
+=======
+            <Droplets className="w-8 h-8 text-primary" />
+            <span className="text-xl font-semibold text-ink">
+>>>>>>> 9a9fd57 (new ui colors)
               3C Irri-Tech
             </span>
           </a>
@@ -114,9 +130,13 @@ export default function App() {
               <a 
                 key={link.name} 
                 href={link.href}
+<<<<<<< HEAD
                 className={`text-sm font-medium transition-colors hover:text-green-accent ${
                   isScrolled ? 'text-text-body' : 'text-white/90'
                 }`}
+=======
+                className="text-sm font-medium transition-colors text-muted hover:text-ink"
+>>>>>>> 9a9fd57 (new ui colors)
               >
                 {link.name}
               </a>
@@ -132,9 +152,15 @@ export default function App() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
+<<<<<<< HEAD
               <X className={isScrolled ? 'text-text-dark' : 'text-white'} />
             ) : (
               <Menu className={isScrolled ? 'text-text-dark' : 'text-white'} />
+=======
+              <X className="text-ink" />
+            ) : (
+              <Menu className="text-ink" />
+>>>>>>> 9a9fd57 (new ui colors)
             )}
           </button>
         </div>
@@ -146,7 +172,11 @@ export default function App() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
+<<<<<<< HEAD
               className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
+=======
+              className="lg:hidden bg-canvas border-t border-hairline overflow-hidden"
+>>>>>>> 9a9fd57 (new ui colors)
             >
               <div className="container py-6 flex flex-col gap-4 text-center">
                 {navLinks.map((link) => (
@@ -154,7 +184,11 @@ export default function App() {
                     key={link.name} 
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
+<<<<<<< HEAD
                     className="text-text-body font-medium hover:text-green-primary transition-colors py-2"
+=======
+                    className="text-body font-medium hover:text-primary transition-colors py-2"
+>>>>>>> 9a9fd57 (new ui colors)
                   >
                     {link.name}
                   </a>
@@ -171,14 +205,22 @@ export default function App() {
       {/* ===== SECTION 3: HERO SECTION ===== */}
       <section 
         id="home" 
+<<<<<<< HEAD
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-dark via-green-primary to-green-mid"
+=======
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-canvas"
+>>>>>>> 9a9fd57 (new ui colors)
       >
         {/* Animated Background Blobs */}
         <div className="absolute inset-0 z-0">
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
+<<<<<<< HEAD
               className="absolute rounded-full bg-white/5 blur-3xl"
+=======
+              className="absolute rounded-full bg-primary-disabled/40 blur-3xl"
+>>>>>>> 9a9fd57 (new ui colors)
               style={{
                 width: Math.random() * 400 + 200,
                 height: Math.random() * 400 + 200,
@@ -199,6 +241,7 @@ export default function App() {
           ))}
         </div>
 
+<<<<<<< HEAD
         <div className="container relative z-10 text-center text-white">
           <Reveal>
             <div className="inline-block py-1 px-3 bg-white/20 backdrop-blur-md text-white text-[11px] font-bold tracking-widest uppercase rounded-full mb-6">
@@ -215,6 +258,24 @@ export default function App() {
                 View Services <ArrowRight className="w-4 h-4" />
               </a>
               <a href="#contact" className="btn-white-outline !px-10">
+=======
+        <div className="container relative z-10 text-center text-ink">
+          <Reveal>
+            <div className="inline-block py-1 px-3 bg-canvas text-ink text-[11px] font-bold tracking-widest uppercase rounded-full mb-6 border border-hairline">
+              Philippines' Trusted Irrigation Specialists
+            </div>
+            <h1 className="text-[28px] md:text-[44px] font-semibold mb-6 !text-ink leading-[1.2]">
+              Smart Irrigation.<br />Better Harvests.
+            </h1>
+            <p className="text-base md:text-lg text-body max-w-xl mx-auto mb-10 leading-relaxed">
+              Delivering modern, water-efficient systems designed for Filipino terrain. From highland vegetable farms to lowland rice fields — we make every drop count.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="#services" className="btn-primary !px-10">
+                View Services <ArrowRight className="w-4 h-4" />
+              </a>
+              <a href="#contact" className="btn-outline !px-10">
+>>>>>>> 9a9fd57 (new ui colors)
                 Book Assessment
               </a>
             </div>
@@ -222,6 +283,7 @@ export default function App() {
             {/* Trust Badges */}
             <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {[
+<<<<<<< HEAD
                 { icon: <CheckCircle2 className="w-5 h-5 text-green-accent" />, text: "Licensed & Certified Engineers" },
                 { icon: <CheckCircle2 className="w-5 h-5 text-green-accent" />, text: "10+ Years Experience" },
                 { icon: <CheckCircle2 className="w-5 h-5 text-green-accent" />, text: "500+ Completed Projects" },
@@ -230,6 +292,16 @@ export default function App() {
                 <div key={idx} className="flex items-center gap-3 bg-white/10 p-3 rounded-lg backdrop-blur-sm">
                   {badge.icon}
                   <span className="text-xs font-medium text-white/90 text-left">{badge.text}</span>
+=======
+                { icon: <CheckCircle2 className="w-5 h-5 text-primary" />, text: "Licensed & Certified Engineers" },
+                { icon: <CheckCircle2 className="w-5 h-5 text-primary" />, text: "10+ Years Experience" },
+                { icon: <CheckCircle2 className="w-5 h-5 text-primary" />, text: "500+ Completed Projects" },
+                { icon: <CheckCircle2 className="w-5 h-5 text-primary" />, text: "Free Farm Site Assessment" },
+              ].map((badge, idx) => (
+                <div key={idx} className="flex items-center gap-3 bg-canvas p-3 rounded-[14px] border border-hairline">
+                  {badge.icon}
+                  <span className="text-xs font-medium text-body text-left">{badge.text}</span>
+>>>>>>> 9a9fd57 (new ui colors)
                 </div>
               ))}
             </div>
@@ -240,18 +312,31 @@ export default function App() {
         <motion.div 
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
+<<<<<<< HEAD
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
         >
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
             <div className="w-1 h-2 bg-white rounded-full" />
+=======
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 hidden md:block"
+        >
+          <div className="w-6 h-10 border-2 border-hairline rounded-full flex justify-center p-1">
+            <div className="w-1 h-2 bg-muted rounded-full" />
+>>>>>>> 9a9fd57 (new ui colors)
           </div>
         </motion.div>
       </section>
 
       {/* ===== SECTION 4: STATS STRIP ===== */}
+<<<<<<< HEAD
       <section className="bg-green-dark py-12 text-white border-y border-white/10">
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x-0 lg:divide-x divide-white/20">
+=======
+      <section className="bg-surface-soft py-12 text-ink border-y border-hairline-soft">
+        <div className="container">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x-0 lg:divide-x divide-hairline">
+>>>>>>> 9a9fd57 (new ui colors)
             {[
               { number: "500+", label: "Projects Completed", icon: <Trophy /> },
               { number: "98%", label: "Client Satisfaction", icon: <Users /> },
@@ -260,7 +345,11 @@ export default function App() {
             ].map((stat, idx) => (
               <div key={idx} className="text-center px-4">
                 <span className="block text-3xl md:text-5xl font-bold mb-2 tracking-tight">{stat.number}</span>
+<<<<<<< HEAD
                 <span className="text-sm font-medium text-white/60 uppercase tracking-widest">{stat.label}</span>
+=======
+                <span className="text-sm font-medium text-muted uppercase tracking-widest">{stat.label}</span>
+>>>>>>> 9a9fd57 (new ui colors)
               </div>
             ))}
           </div>
